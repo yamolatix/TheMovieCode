@@ -8,15 +8,23 @@ const Search = () => {
 
             <h1>THE MOVIE CODE</h1>
 
-            <div className="input_search">
+            <div className="container_form">
 
                 <form className="form">
-                    <input type="text" name="search" placeholder="Search.." />
+
+                    <input className="input_search" type="text" name="search" placeholder="Search movies or tv shows"  />
+                    <button type="submit" className="input_sub" >
+                        <i className='bx bx-search'></i>
+                    </button>
+
                 </form>
             </div>
 
-
-        </div>
+            <div className="cat_search">
+                <button className="btn cat_but1">Movies</button>
+                <button className="btn cat_but2">Tv Shows</button>
+            </div>
+        </div >
     );
 };
 

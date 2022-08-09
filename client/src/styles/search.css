@@ -2,6 +2,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Staatliches&display=swap');
 
 .initial_search {
-    padding-top: 10px;
     font-family: 'Staatliches', cursive;
+}
+
+.container_form {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.input_search {
+    border-width: 1px;
+    padding: 16px 50px;
+    border-radius: 15px;
+    background-color: #120312;
+    border-color: #ffffff;
+    color: #ffffff;
+    font-family: 'Public Sans', sans-serif;
+    width: 450px;
+    font-size: 14px;
+    display: block;
+}
+
+.input_sub {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.input_sub i {
+    font-size: 20px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 15px 20px;
+    border-width: 0px;
+    color: gray;
+    z-index: 2;
+}
+
+.input_search:focus+.input_sub i {
+    color: white
+}
+
+.cat_search {
+    display: flex;
+    justify-content: center;
+}
+
+.cat_but1,
+.cat_but2 {
+    background-color: #3F1D39;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Staatliches', cursive;
+    font-size: 15px;
+    padding: 5px 25px;
+    transition-duration: .2s;
+    margin: 10px;
+}
+
+.cat_but1:hover,
+.cat_but2:hover {
+    background-color: white;
+    color: #120312
+}
+
+.cat_but1:focus,
+.cat_but2:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
 }
