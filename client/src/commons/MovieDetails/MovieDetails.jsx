@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/movie_details.css"
+import "./movie_details.css"
 import { Link } from "react-router-dom";
 
 const MovieDetails = () => {

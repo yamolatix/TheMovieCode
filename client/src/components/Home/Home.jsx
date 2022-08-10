@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/home.css"
-import Carrousel from "../commons/Carrousel";
-import PopularSlide from "../commons/PopularSlide";
+import Carrousel from "../../commons/Carrousel/Carrousel";
+import PopularSlide from "../../commons/PopularSlide/PopularSlide";
+import "./home.css"
 
 const Home = () => {
     return (

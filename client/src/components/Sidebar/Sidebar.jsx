@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/sidebar.css"
+import "./sidebar.css"
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
@@ -35,12 +35,12 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <div className="icon-link">
-                            <Link to={"/account"} className="linkS">
+                            <Link to={"/enter"} className="linkS">
                                 <i className='bx bx-user-circle'></i>
                             </Link>
                         </div>
                         <ul className="sub-menu">
-                            <li>Account</li>
+                            <li>Get In</li>
                         </ul>
                     </li>
                 </ul>

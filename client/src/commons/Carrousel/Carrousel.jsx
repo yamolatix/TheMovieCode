@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/carrousel.css"
+import "./carrousel.css"
 import { Link } from "react-router-dom";
 
 const Carrousel = () => {

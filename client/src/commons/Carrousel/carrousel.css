@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Staatliches&display=swap');
 
 .imagen_carrousel {
+    margin-left: 60px;
     background-repeat: no-repeat;
     background-color: #120312;
     width: 100%;
