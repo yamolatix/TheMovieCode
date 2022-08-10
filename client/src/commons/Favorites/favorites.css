@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Staatliches&display=swap');
+
+.initial_fav {
+    padding-left: 60px;
+    width: 100%;
+}
+
+.movie_code {
+    font-family: 'Staatliches', cursive;
+}
+
+.title_fav {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+}

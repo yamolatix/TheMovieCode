@@ -6,6 +6,8 @@ import Home from "./components/Home/Home";
 import MovieDetails from "./commons/MovieDetails/MovieDetails";
 import Search from "./commons/Search/Search";
 import Enter from "./commons/Enter/Enter";
+import Favorites from "./commons/Favorites/Favorites";
+import UserList from "./commons/UsersList/UserList";
 
 const App = () => {
   return (
@@ -17,6 +19,9 @@ const App = () => {
         <Route path="/movie/id" element={<MovieDetails />} />
         <Route path="/search" element={<Search />} />
         <Route path="/enter" element={<Enter />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/users" element={<UserList />} />
+
 
         {/* <Route path="/movies" element={<MoviesGrid />} /> */}
         {/* <Route path="/tvshows" element={<TvShows />} /> */}

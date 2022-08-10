@@ -22,7 +22,7 @@ const Enter = () => {
                         <label for="chk" aria-hidden="true">Login</label>
                         <input type="text" name="txt" placeholder="Username" required />
                         <input type="password" name="pswd" placeholder="Password" required />
-                        <button className="but_enter">Login</button>
+                        <button className="but_enter">Login </button>
                     </form>
                 </div>
             </div>
