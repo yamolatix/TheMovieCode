@@ -9,7 +9,6 @@
     align-items: center;
     min-height: 100vh;
     font-family: 'Staatliches', cursive;
-    /* background: linear-gradient(to bottom, #200A20, #120312, #120312); */
     background: #120312;
 }
 
@@ -55,7 +54,7 @@ input{
     outline: none;
     border-radius: 5px;
 }
- button {
+ .but_enter {
     width: 66%;
     height: 40px;
     margin: 10px auto;
@@ -74,7 +73,7 @@ input{
     font-family: 'Public Sans', sans-serif;
  }
 
- button:hover {
+ .but_enter:hover {
     background: #fff;
     color: #452549;
  }

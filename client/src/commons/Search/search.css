@@ -21,7 +21,7 @@
     padding: 16px 50px;
     border-radius: 15px;
     background-color: #120312;
-    border-color: #ffffff;
+    border: 1px solid gray;   
     color: #ffffff;
     font-family: 'Public Sans', sans-serif;
     width: 450px;
@@ -37,18 +37,18 @@
 }
 
 .input_sub i {
-    font-size: 20px;
+    font-size: 23px;
     position: absolute;
     right: 0px;
     top: 0px;
-    padding: 15px 20px;
+    padding: 35px 15px 20px 0px;
     border-width: 0px;
     color: gray;
     z-index: 2;
 }
 
-.input_search:focus+.input_sub i {
-    color: white
+.input_search:focus + .input_sub i {
+    color: white;
 }
 
 .cat_search {
@@ -62,7 +62,7 @@
     border: 1px solid transparent;
     border-radius: 10px;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: #fff;
     cursor: pointer;
     font-family: 'Staatliches', cursive;
     font-size: 15px;
