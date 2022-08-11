@@ -17,6 +17,7 @@ exports.register = (req, res) => {
 
             const token = jwt.sign({ user: user }, SECRET)
             res.json({
+                id: user.id,
                 username: user.username,
                 email: user.email,
                 token: token
@@ -44,6 +45,7 @@ exports.login = (req, res) => {
 
                     const token = jwt.sign({ user: user }, SECRET)
                     res.json({
+                        id: user.id,
                         username: user.username,
                         email: user.email,
                         token: token
@@ -57,7 +59,6 @@ exports.login = (req, res) => {
         .catch(err => {
             res.status(500).json(err)
         })
-
 };
 
 exports.logout = (req, res) => {
