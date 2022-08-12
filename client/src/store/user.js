@@ -12,17 +12,19 @@ export const userLogin = createAsyncThunk("USER_LOGIN", (data) => {
         .then(user => {
             localStorage.setItem('user', JSON.stringify(user.data))
             return user.data
-        });
+        })
+        .catch(error => console.log(error))
 });
 
 export const userLogout = createAsyncThunk("USER_LOGOUT", () => {
     return axios.post("http://localhost:3001/api/userAuth/logout")
         .then(user => {
-            localStorage.removeItem("user");
+            localStorage.removeItem("user")
         })
+        .catch(error => console.log(error))
 });
 
-const userReducer = createReducer({}, {
+const userReducer = createReducer([], {
     [userRegister.fulfilled]: (state, action) => action.payload,
     [userLogin.fulfilled]: (state, action) => action.payload,
     [userLogout.fulfilled]: (state, action) => action.payload,

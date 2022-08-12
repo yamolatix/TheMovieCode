@@ -22,7 +22,6 @@ const Search = () => {
                     <button className="btn cat_but2">Tv Shows</button>
                 </div>
             </div>
-
         </>
     );
 };

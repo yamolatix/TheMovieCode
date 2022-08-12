@@ -7,7 +7,7 @@ import { userRegister } from "../../store/user";
 import "./register.css"
 
 const Register = () => {
-
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const username = useInput();
