@@ -18,7 +18,7 @@
 
 .input_search {
     border-width: 1px;
-    padding: 16px 50px;
+    padding: 3px 50px;
     border-radius: 15px;
     background-color: #120312;
     border: 1px solid gray;   
@@ -41,7 +41,7 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    padding: 35px 15px 20px 0px;
+    padding: 27px 15px 20px 0px;
     border-width: 0px;
     color: gray;
     z-index: 2;

@@ -1,0 +1,112 @@
+.initial_register {
+    background-color: #120312;
+    box-sizing: border-box;
+}
+
+.background {
+    width: 430px;
+    height: 670px;
+    transform: translate(20%, 20%);
+}
+
+.background .shape_reg {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape_reg:first-child {
+    background: linear-gradient(to right, #aa47aa, #4f1e4f);
+    left: 320px;
+    top: -140px
+}
+
+.form_register {
+    height: 450px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.08);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+.form_register * {
+    font-family: 'Public Sans', sans-serif;
+    color: #fff;
+    letter-spacing: 0.5px;
+    padding-left: 5px;
+    outline: none;
+    border: none;
+}
+
+.form_register .title_register {
+    font-size: 32px;
+    margin: 0;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+}
+
+label {
+    display: block;
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+input {
+    display: block;
+    height: 45px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 6px;
+    padding: 0p 10px;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+.button_register {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #fff;
+    color: #080710;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.social {
+    margin-top: 30px;
+    display: flex;
+}
+
+.social .go {
+    background: red;
+    width: 150px;
+    border-radius: 3px;
+    padding: 5px 10px 10px 5px;
+    background-color: rgba(255, 255, 255, 0.27);
+    color: #eaf0fb;
+    text-align: center;
+}
+
+.social .go:hover {
+    background-color: rgba(255, 255, 255, 0.47);
+}
+
+.social i {
+    margin-right: 4px;
+}
