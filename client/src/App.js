@@ -22,14 +22,15 @@ const App = () => {
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/tvshow/:id" element={<TvShowDetails />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/search/:search" element={<Search />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/users" element={<UserList />} />
 
-
-        {/* <Route path="/movies" element={<MoviesGrid />} /> */}
-        {/* <Route path="/tvshows" element={<TvShows />} /> */}
+        {/* ESTOS DOS IRIAN A UNA MISMA RUTA PERO DEPENDIENDO DE SU PATH???????? */}
+        <Route path="/search/movies" element={<Search />} /> 
+        <Route path="/search/tvshows" element={<Search />} />
       </Routes>
 
       <Footer />

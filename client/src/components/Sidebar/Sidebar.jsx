@@ -114,7 +114,8 @@ const Sidebar = () => {
                         <li>
                             <div className="icon-link">
                                 <Link to={"/login"} className="linkS">
-                                    <i className='bx bx-user-check'></i>                                </Link>
+                                    <i className='bx bx-user-check'></i>
+                                </Link>
                             </div>
                             <ul className="sub-menu">
                                 <li>Login</li>
@@ -123,7 +124,8 @@ const Sidebar = () => {
                         <li>
                             <div className="icon-link">
                                 <Link to={"/register"} className="linkS">
-                                    <i className='bx bx-user-plus' ></i>                                </Link>
+                                    <i className='bx bx-user-plus' ></i>
+                                </Link>
                             </div>
                             <ul className="sub-menu">
                                 <li>Register</li>
