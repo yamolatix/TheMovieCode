@@ -10,6 +10,7 @@ import Favorites from "./commons/Favorites/Favorites";
 import UserList from "./commons/UsersList/UserList";
 import Register from "./commons/Register/Register";
 import Login from "./commons/Login/Login";
+import TvShowDetails from "./commons/TvShowDetails/TvShowDetails";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/tvshow/:id" element={<TvShowDetails />} />
         <Route path="/search" element={<Search />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

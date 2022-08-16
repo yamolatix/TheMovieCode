@@ -12,7 +12,6 @@ const Favorites = () => {
 
                 Ver como renderizar los favoritos
     
-
             </div>
 
         </div>

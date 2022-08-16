@@ -8,7 +8,7 @@ const contentType = 'application/json;charset=utf-8'
 
 // Trae todas las series
 exports.tvshows = (req, res) => {
-    axios.get(`${apiTMDB}/discover/tv/?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`, {
+    axios.get(`${apiTMDB}/discover/tv/?api_key=${apiKey}&language=en-US&sort_by=popularity.desc`, {
         headers: {
             Authorization:
                 `Bearer ${authorization}`,

@@ -10,7 +10,7 @@ const contentType = 'application/json;charset=utf-8'
 
 //Llamado a todas las movies.
 exports.movies = (req, res) => {
-    axios.get(`${apiTMDB}/discover/movie/?api_key=${apiKey}`, {
+    axios.get(`${apiTMDB}/discover/movie/?api_key=${apiKey}&language=en-US&sort_by=popularity.desc`, {
         headers: {
             Authorization:
                 `Bearer ${authorization}`,

@@ -54,15 +54,15 @@
     margin-top: 35px;
 }
 
-.container_titleD {
+.container_titleTV {
     font-size: 45px;
-    max-width: 250px;
+    max-width: 350px;
 }
 
-.container_year{
+.container_yearTV{
     font-family: 'Public Sans', sans-serif;
     font-size: 23px;
-    margin: 5px 0 30px 0;
+    margin: 5px 900px 30px 0;
 }
 
 .description {

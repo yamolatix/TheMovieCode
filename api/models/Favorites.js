@@ -28,6 +28,6 @@ Favorites.init({
     }
 },
 
-    { sequelize: db, modelName: 'favorites' });
+    { timestamps: false, sequelize: db, modelName: 'favorites' });
 
 module.exports = Favorites;

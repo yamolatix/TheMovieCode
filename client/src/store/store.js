@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import movieReducer from './movies';
+import individualReducer from './individual';
+import moviesReducer from './movies';
+import tvShowsReducer from './tvshows';
 import userReducer from './user';
 
 const store = configureStore({
@@ -8,7 +10,9 @@ const store = configureStore({
         getDefaultMiddleware().concat(logger),
     reducer: {
         user: userReducer,
-        movies: movieReducer,
+        movies: moviesReducer,
+        tvshows: tvShowsReducer,
+        individual: individualReducer,
     }
 });
 

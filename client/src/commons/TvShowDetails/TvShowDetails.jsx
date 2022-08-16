@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
-import "./movie_details.css"
+import "./tv_show_details.css"
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import placeholder from "../../utils/placeholder.png"
-import { individualMovie } from "../../store/individual";
+import { individualTvShow } from "../../store/individual";
 
-const MovieDetails = () => {
-    const movie = useSelector(state => state.individual)
+const TvShowDetails = () => {
+    const tvshow = useSelector(state => state.individual)
     const { id } = useParams();
     const dispatch = useDispatch();
 
-    const imageUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : placeholder
+    const imageUrl = tvshow.backdrop_path ? `https://image.tmdb.org/t/p/original${tvshow.backdrop_path}` : placeholder
 
     useEffect(() => {
-        dispatch(individualMovie(id))
+        dispatch(individualTvShow(id))
     }, [id])
 
     return (
@@ -35,22 +35,24 @@ const MovieDetails = () => {
                         {/* <i className='bx bx-star'></i> */}
                         <i className='bx bxs-star'></i>
                     </div>
-                    <div className="movie_title">
-                        <h2 className="container_titleD">
-                            {movie.title}
+                    <div className="tv_title">
+                        <h2 className="container_titleTV">
+                            {tvshow.name}
                         </h2>
                     </div>
-                    <div className="movie_year">
-                        <h3 className="container_year">{movie.tagline}</h3>
+                    <div className="tv_year">
+                        <h3 className="container_yearTV">{ 
+                        tvshow.tagline ? 
+                        tvshow.tagline : tvshow.type}</h3>
                     </div>
                     <div className="description">
                         <p>
-                            {movie.overview}
+                            {tvshow.overview}
                         </p>
                     </div>
                     <div className="category">
-                        <h3 className="cate1">Movie</h3>
-                        <h2 className="cate2">{movie.release_date}</h2>
+                        <h3 className="cate1">TV SHOW</h3>
+                        <h2 className="cate2">{tvshow.first_air_date}</h2>
                     </div>
                 </div>
             </div>
@@ -59,4 +61,4 @@ const MovieDetails = () => {
     )
 }
 
-export default MovieDetails;
+export default TvShowDetails;

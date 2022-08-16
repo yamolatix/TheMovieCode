@@ -37,7 +37,7 @@ User.init({
         }
     }
 },
-    { sequelize: db, modelName: 'users' }
+    { timestamps: false, sequelize: db, modelName: 'users' }
 );
 
 module.exports = User;
