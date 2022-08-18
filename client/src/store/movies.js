@@ -7,22 +7,15 @@ export const allMovies = createAsyncThunk("ALL_MOVIES", () => {
         .catch(error => console.log(error))
 });
 
-export const searchMovies = createAsyncThunk("SEARCH_MOVIE", (search) => {
+/* export const searchMovies = createAsyncThunk("SEARCH_MOVIE", (search) => {
     return axios.get(`http://localhost:3001/api/movies/search/${search}`)
         .then(movies => movies.data)
         .catch(error => console.log(error))
-})
-
-export const popularMovies = createAsyncThunk("POPULAR_MOVIES", () => {
-    return axios.get(`http://localhost:3001/api/movies/popular`)
-        .then(movies => movies.data)
-        .catch(error => console.log(error))
-})
+}) */
 
 const moviesReducer = createReducer([], {
     [allMovies.fulfilled]: (state, action) => action.payload,
-    [searchMovies.fulfilled]: (state, action) => action.payload,
-    [popularMovies.fulfilled]: (state, action) => action.payload,
+    // [searchMovies.fulfilled]: (state, action) => action.payload,
 });
 
 export default moviesReducer;

@@ -2,7 +2,9 @@ import React from "react";
 import "./carrousel.css"
 import { Link } from "react-router-dom";
 
+
 const Carrousel = () => {
+    // https://www.youtube.com/watch?v=-dqwh8LoMzo&ab_channel=BorjaScript
     return (
         <div className="imagen_carrousel" style={{
             backgroundImage: `url("https://image.tmdb.org/t/p/original/xKb6mtdfI5Qsggc44Hr9CCUDvaj.jpg")`
@@ -11,15 +13,15 @@ const Carrousel = () => {
                 <h1 className="movie_code">THE MOVIE CODE</h1>
                 <div className="bottom-carrousel">
                     <span className="categories">
-                        <Link to={"/search/movies"} className="link_cat">Movies</Link>
-                        <Link to={"/search/tvshows"} className="link_cat">TV Shows</Link>
+                        <Link to={"/search"} className="link_cat">Movies</Link>
+                        <Link to={"/search"} className="link_cat">TV Shows</Link>
                     </span>
                 </div>
 
                 <div className="info">
                     <div className="movie_title">
                         <h2 className="container_title">
-                            <Link to={"/movie/id"} className="link_tit">TERMINATOR 2: EL JUICO FINAL </Link>
+                            <Link to={"/movies/id"} className="link_tit">TERMINATOR 2: EL JUICO FINAL </Link>
                         </h2>
                     </div>
                     <div className="description">

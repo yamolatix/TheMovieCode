@@ -14,6 +14,6 @@ movies.get('/:id', movieController.movieId)
 movies.get('/search/:search', movieController.movieSearch)
 
 //Ruta para traer las películas más populares.
-movies.get('/popular', movieController.moviePopular)
+movies.get('/now_playing', movieController.movieNowPlaying)
 
 module.exports = movies;

@@ -11,6 +11,7 @@ import UserList from "./commons/UsersList/UserList";
 import Register from "./commons/Register/Register";
 import Login from "./commons/Login/Login";
 import TvShowDetails from "./commons/TvShowDetails/TvShowDetails";
+/* import Grid from "./components/Grid/Grid"; */
 
 const App = () => {
   return (
@@ -19,8 +20,8 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movie/:id" element={<MovieDetails />} />
-        <Route path="/tvshow/:id" element={<TvShowDetails />} />
+        <Route path="/movies/:id" element={<MovieDetails />} />
+        <Route path="/tvshows/:id" element={<TvShowDetails />} />
         <Route path="/search" element={<Search />} />
         <Route path="/search/:search" element={<Search />} />
         <Route path="/login" element={<Login />} />
@@ -28,9 +29,9 @@ const App = () => {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/users" element={<UserList />} />
 
-        {/* ESTOS DOS IRIAN A UNA MISMA RUTA PERO DEPENDIENDO DE SU PATH???????? */}
-        <Route path="/search/movies" element={<Search />} /> 
-        <Route path="/search/tvshows" element={<Search />} />
+        {/* VER COMO LO PUEDO IMPLEMENTAR MÁS ADELANTE */}
+        {/* <Route path="/search/movies" element={<Grid />} /> 
+        <Route path="/search/tvshows" element={<Grid />} /> */}
       </Routes>
 
       <Footer />

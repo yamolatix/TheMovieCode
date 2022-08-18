@@ -11,6 +11,7 @@ const contentType = 'application/json;charset=utf-8'
 //Llamado a todas las movies.
 exports.movies = (req, res) => {
     axios.get(`${apiTMDB}/discover/movie/?api_key=${apiKey}&language=en-US&sort_by=popularity.desc`, {
+        
         headers: {
             Authorization:
                 `Bearer ${authorization}`,
@@ -36,16 +37,16 @@ exports.movieId = (req, res) => {
         .catch((error) => res.status(501).send(error))
 }
 
-// Llamado a las movies más populares
-exports.moviePopular = (req, res) => {
-    axios.get(`${apiTMDB}/movie/popular/?api_key=${apiKey}&language=en-US`, {
+// Llamado a las movies en cartelera
+exports.movieNowPlaying = (req, res) => {
+    axios.get(`${apiTMDB}/movie/now_playing/?api_key=${apiKey}&language=en-US&page=1`, {
         headers: {
             Authorization:
                 `Bearer ${authorization}`,
             "Content-Type": contentType,
         },
     })
-        .then(movie => res.status(200).send(movie.results))
+        .then(movie => res.status(200).send(movie.data))
         .catch((error) => res.status(501).send(error))
 }
 

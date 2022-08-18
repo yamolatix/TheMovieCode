@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import individualReducer from './individual';
 import moviesReducer from './movies';
+import nowPlayingReducer from './now_playing';
 import tvShowsReducer from './tvshows';
 import userReducer from './user';
 
@@ -13,6 +14,7 @@ const store = configureStore({
         movies: moviesReducer,
         tvshows: tvShowsReducer,
         individual: individualReducer,
+        nowplaying: nowPlayingReducer,
     }
 });
 

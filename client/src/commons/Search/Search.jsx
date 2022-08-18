@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router'
-import { Link } from "react-router-dom";
+import Grid from "../../components/Grid/Grid";
 import { allMovies } from "../../store/movies";
 import { allTvShows, searchAll } from "../../store/tvshows";
-import MovieCard from "../MovieCard/MovieCard";
-import TvShowCard from "../TvShowCard/TvShowCard";
 import "./search.css"
 
 const Search = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const navigate = useNavigate()
+
     const [search, setSearch] = useState('')
+    const [active, setActive] = useState("FirstCard")
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -24,7 +24,6 @@ const Search = () => {
         navigate(`/search/${search}`)
     }
 
-    ////// ESTO SE DEBERIA IR AL NUEVO COMPONENTE GRID
     useEffect(() => {
         dispatch(allMovies())
         dispatch(allTvShows())
@@ -32,7 +31,6 @@ const Search = () => {
 
     const movies = useSelector(state => state.movies)
     const tvshows = useSelector(state => state.tvshows)
-    ///////////////////////////////////////////////////
 
     return (
         <>
@@ -43,35 +41,27 @@ const Search = () => {
                 <div className="container_form">
                     <form className="form" onSubmit={handleSubmit}>
                         <input onChange={handleSearch} className="input_search" type="text" name="search" placeholder="Search movies or tv shows" />
-                        <button type="submit" className="input_sub" >
+                        <button type="submit" className="input_sub"
+                            onClick={() => setActive("ThirdCard")}>
                             <i className='bx bx-search'></i>
                         </button>
                     </form>
                 </div>
 
                 <div className="cat_search">
-                    <Link to="/search/movies"><button className="btn cat_but1">Movies</button></Link>
-                    <Link to="/search/tvshows"><button className="btn cat_but2">Tv Shows</button></Link>
+
+                    <button onClick={() => setActive("FirstCard")} className="btn cat_but1">Movies</button>
+
+                    <button onClick={() => setActive("SecondCard")} className="btn cat_but2">Tv Shows</button>
+
                 </div>
             </div>
 
-            {/* /////////////////////////////////////////////////// */}
-            {/* https://www.youtube.com/watch?v=rkxHd9SUBGU&ab_channel=jonmircha 
-            VIDEO QUE HACE LO QUE NECESITO CON ESTO
-            MEPA QUE TENGO QUE HACER UN GRID EN GENERAL PARA TV SHOW O TV MOVIE Y DEPENDE DE ESO TENGO QUE TOMARLO POT PATHNAME Y DEPENDE DE ESO DEBERIA RENDERIZARRRRRR
-            */}
-            {/*             <ul className="movies_grid">
-                {movies.map((movie, i) => (
-                    <MovieCard key={i} movie={movie} />
-                ))}
-            </ul> */}
-
-            <ul className="template_grid">
-                {tvshows.map((tvshow, i) => (
-                    <TvShowCard key={i} tvshow={tvshow} />
-                ))}
-            </ul>
-            {/* /////////////////////////////////////////////////// */}
+            {active === "FirstCard" ?
+                <Grid types={movies} />
+                :
+                <Grid types={tvshows} />
+            }
         </>
     );
 };
