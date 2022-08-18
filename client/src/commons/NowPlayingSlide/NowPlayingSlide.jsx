@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import "./popular_slide.css";
+import "./now_playing_slide.css";
 import { useDispatch, useSelector } from "react-redux"
-import PopularCard from "./PopularCard"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { settings } from "../../utils/settings";
+import { settings } from "../../utils/settings_now";
 import { movieNowPlaying } from "../../store/now_playing";
+import NowPlayingCard from "./NowPlayingCard";
 
-const PopularSlide = () => {
+const NowPlayingSlide = () => {
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -23,7 +23,7 @@ const PopularSlide = () => {
             <Slider {...settings}>
                 {movies.map((movie, i) =>
                     <div className="item" key={i}>
-                        <PopularCard  movie={movie} />
+                        <NowPlayingCard  movie={movie} />
                     </div>
                 )}
             </Slider>
@@ -33,4 +33,4 @@ const PopularSlide = () => {
     )
 }
 
-export default PopularSlide;
+export default NowPlayingSlide;

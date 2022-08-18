@@ -9,6 +9,8 @@ import "./search.css"
 const Search = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const tvshows = useSelector(state => state.tvshows)
+    const movies = useSelector(state => state.movies)
 
     const [search, setSearch] = useState('')
     const [active, setActive] = useState("FirstCard")
@@ -23,14 +25,6 @@ const Search = () => {
         dispatch(searchAll(search));
         navigate(`/search/${search}`)
     }
-
-    useEffect(() => {
-        dispatch(allMovies())
-        dispatch(allTvShows())
-    }, [dispatch])
-
-    const movies = useSelector(state => state.movies)
-    const tvshows = useSelector(state => state.tvshows)
 
     return (
         <>

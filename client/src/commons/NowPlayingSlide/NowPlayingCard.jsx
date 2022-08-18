@@ -1,10 +1,10 @@
 import React from "react";
-import "./popular_card.css"
+import "./now_playing_card.css"
 import placeholder from "../../utils/placeholder.png";
 import { Link } from "react-router-dom";
 
 
-const PopularCard = ({ movie }) => {
+const NowPlayingCard = ({ movie }) => {
 
     const imageUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}` : placeholder
 
@@ -21,4 +21,4 @@ const PopularCard = ({ movie }) => {
     )
 };
 
-export default PopularCard;
+export default NowPlayingCard;

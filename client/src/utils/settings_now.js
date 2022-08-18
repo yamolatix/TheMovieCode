@@ -4,9 +4,8 @@ export const settings = {
   infinite: true,
   centerPadding: "60px",
   slidesToShow: 3,
-  autoplaySpeed: 4000,
+  autoplaySpeed: 10000,
   autoplay: true,
-  pauseOnHover: true
-
-
+  pauseOnHover: true,
+  speed: 1000,
 };
