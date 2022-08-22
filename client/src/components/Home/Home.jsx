@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 import Carrousel from "../../commons/Carrousel/Carrousel";
 import MoviesSlide from "../../commons/MoviesSlide/MoviesSlide";
 import NowPlayingSlide from "../../commons/NowPlayingSlide/NowPlayingSlide";
 import TvShowSlide from "../../commons/TvShowsSlide/TvShowSlide";
+import { showUsers } from "../../store/users";
 import "./home.css"
 
 const Home = () => {
+
+    const dispatch = useDispatch();
+    const user = useLocation(state => state.user);
+
+    useEffect(() => {
+        dispatch(showUsers(user.id))
+    }, [dispatch])
+
+
     return (
         <div className="body">
             <Carrousel />
@@ -17,10 +29,3 @@ const Home = () => {
 }
 
 export default Home;
-
-/* 
-Componente Carrusel
-Componente Popular Este solo mustra un slide de las peliculas, no más
-Componente Movies
-Componente Tv Shows 
- */

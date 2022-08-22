@@ -31,12 +31,8 @@ const Sidebar = () => {
 
                 <div className="logo-details">
                     <i className='bx bxs-ghost'></i>
-
-                    {/* <ul className="salute">
-                        <li>Bu!</li>
-                    </ul> */}
-
                 </div>
+
                 {user.id ? (<ul className="nav-links">
                     <li>
                         <div className="icon-link">

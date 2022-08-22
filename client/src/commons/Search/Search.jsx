@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router'
 import Grid from "../../components/Grid/Grid";
-import { allMovies } from "../../store/movies";
-import { allTvShows, searchAll } from "../../store/tvshows";
+import { searchAll } from "../../store/tvshows";
 import "./search.css"
 
 const Search = () => {

@@ -5,6 +5,7 @@ import moviesReducer from './movies';
 import nowPlayingReducer from './now_playing';
 import tvShowsReducer from './tvshows';
 import userReducer from './user';
+import usersReducer from './users';
 
 const store = configureStore({
     middleware: (getDefaultMiddleware) =>
@@ -15,6 +16,7 @@ const store = configureStore({
         tvshows: tvShowsReducer,
         individual: individualReducer,
         nowplaying: nowPlayingReducer,
+        users: usersReducer,
     }
 });
 
