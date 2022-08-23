@@ -4,6 +4,7 @@ import toast from 'react-hot-toast'
 import { Link, useNavigate } from "react-router-dom";
 import { userLogout } from "../../store/user";
 import { useDispatch } from "react-redux";
+import { useStorage } from "../../hooks/useStorage";
 
 
 const Sidebar = () => {
@@ -11,9 +12,7 @@ const Sidebar = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const user = localStorage.getItem('user')
-        ? JSON.parse(localStorage.getItem('user'))
-        : {}
+    const user = useStorage();
 
     const handleLogout = (e) => {
         e.preventDefault();

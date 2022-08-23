@@ -1,7 +1,7 @@
 const Favorites = require("../models/Favorites");
 const User = require("../models/User");
 
-exports.addFavorite = (req, res) => { //POST
+exports.addFavorite = (req, res) => {
     const { tmdbId, title, poster_path, description, release_date, genres } = req.body
     const { userId } = req.params
 
@@ -13,8 +13,7 @@ exports.addFavorite = (req, res) => { //POST
                     title: title,
                     poster_path: poster_path,
                     description: description,
-                    release_date: release_date,
-                    genres: genres.map(genre => genre.name).join(", ")
+                    release_date: release_date
                 }
             })
                 .then(([newfavorite]) => {
@@ -25,7 +24,7 @@ exports.addFavorite = (req, res) => { //POST
         })
 };
 
-exports.removeFavorite = (req, res) => { // DELETE
+exports.removeFavorite = (req, res) => {
     const { userId, favoriteId } = req.params
     Favorites.destroy({
         where: {
@@ -43,7 +42,7 @@ exports.allFavorites = (req, res) => {
         .catch((error) => res.status(500).json(error));
 };
 
-exports.showUsers = (req, res) => { // GET
+exports.showUsers = (req, res) => {
     const { id } = req.params;
 
     User.findAll({

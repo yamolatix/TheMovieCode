@@ -1,4 +1,4 @@
-import { createAsyncThunk, createReducer } from '@reduxjs/toolkit'
+/* import { createAsyncThunk, createReducer } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 export const showUsers = createAsyncThunk("SHOW_USERS", (userId) => {
@@ -11,4 +11,4 @@ const usersReducer = createReducer([], {
     [showUsers.fulfilled]: (state, action) => action.payload,
 });
 
-export default usersReducer;
+export default usersReducer; */

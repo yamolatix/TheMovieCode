@@ -22,9 +22,6 @@ Favorites.init({
     },
     release_date: {
         type: Sequelize.STRING,
-    },
-    genres: {
-        type: Sequelize.STRING,
     }
 },
 

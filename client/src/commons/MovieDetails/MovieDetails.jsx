@@ -1,20 +1,48 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./movie_details.css"
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import placeholder from "../../utils/placeholder.png"
 import { individualMovie } from "../../store/individual";
+import toast from 'react-hot-toast'
+import { addToFavorites, allFavorites, removeFromFavorites } from "../../store/favorites";
+import { useStorage } from "../../hooks/useStorage";
 
 const MovieDetails = () => {
     const movie = useSelector(state => state.individual)
+    const user = useStorage();
     const { id } = useParams();
+    const [favorite, SetFavorite] = useState(false);
     const dispatch = useDispatch();
 
     const imageUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : placeholder
 
     useEffect(() => {
         dispatch(individualMovie(id))
+        dispatch(allFavorites(user.id))
     }, [id])
+
+    const agregarFavoritos = () => {
+        dispatch(addToFavorites(user.id, {
+            tmdbId: id,
+            title: movie.title,
+            poster_path: movie.poster_path,
+            description: movie.overview,
+            release_date: movie.release_date,
+        }))
+
+        SetFavorite(true);
+        console.log("**STATE FAVORITE EN AGREGAR FAV**", favorite)
+        toast.success('Added to Favorites!')
+    };
+
+    const eliminarFavoritos = () => {
+        dispatch(removeFromFavorites(user.id, id))
+
+        SetFavorite(false);
+        console.log("**STATE FAVORITE EN ELIMINAR FAV**", favorite)
+        toast.success('Removed to Favorites!')
+    };
 
     return (
 
@@ -31,10 +59,17 @@ const MovieDetails = () => {
                 </div>
 
                 <div className="info">
-                    <div className="favorite">
-                        {/* <i className='bx bx-star'></i> */}
-                        <i className='bx bxs-star'></i>
-                    </div>
+
+                    {favorite ? (
+                        <div className="favorite" >
+                            <i className='bx bxs-star' onClick={eliminarFavoritos} ></i>
+                        </div>
+                    ) : (
+
+                        <div className="favorite" >
+                            <i className='bx bx-star' onClick={agregarFavoritos}></i>
+                        </div>
+                    )}
                     <div className="movie_title">
                         <h2 className="container_titleD">
                             {movie.title}
