@@ -9,7 +9,7 @@ const MoviesCard = ({ movie }) => {
     const imageUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : placeholder
 
     return (
-        <Link to={`/movies/${movie.id}`}>
+        <Link to={`/search/movies/${movie.id}`}>
             <img
                 className="tvslide_card"
                 src={imageUrl}

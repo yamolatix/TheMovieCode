@@ -2,7 +2,7 @@ const Favorites = require("../models/Favorites");
 const User = require("../models/User");
 
 exports.addFavorite = (req, res) => {
-    const { tmdbId, title, poster_path, description, release_date, genres } = req.body
+    const { tmdbId, title, poster_path, description, release_date, category } = req.body
     const { userId } = req.params
 
     User.findByPk(userId)
@@ -13,7 +13,8 @@ exports.addFavorite = (req, res) => {
                     title: title,
                     poster_path: poster_path,
                     description: description,
-                    release_date: release_date
+                    release_date: release_date,
+                    category: category
                 }
             })
                 .then(([newfavorite]) => {
@@ -31,7 +32,7 @@ exports.removeFavorite = (req, res) => {
             tmdbId: favoriteId,
         },
         include: [{ model: User, attributes: { id: userId } }]
-    }).then(() => { res.status(200).json("Se ha eliminado con éxito") })
+    }).then(() =>  res.status(200).json("Se ha eliminado con éxito") )
 };
 
 exports.allFavorites = (req, res) => {

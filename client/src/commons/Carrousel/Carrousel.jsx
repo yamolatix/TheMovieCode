@@ -13,8 +13,8 @@ const Carrousel = () => {
                 <h1 className="movie_code">THE MOVIE CODE</h1>
                 <div className="bottom-carrousel">
                     <span className="categories">
-                        <Link to={"/search"} className="link_cat">Movies</Link>
-                        <Link to={"/search"} className="link_cat">TV Shows</Link>
+                        <Link to={"/search/movies"} className="link_cat">Movies</Link>
+                        <Link to={"/search/tvshows"} className="link_cat">TV Shows</Link>
                     </span>
                 </div>
 

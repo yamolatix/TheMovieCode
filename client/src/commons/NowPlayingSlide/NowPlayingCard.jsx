@@ -9,7 +9,7 @@ const NowPlayingCard = ({ movie }) => {
     const imageUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}` : placeholder
 
     return (
-        <Link to={`/movies/${movie.id}`}>
+        <Link to={`/search/movies/${movie.id}`}>
             <img
                 className="popular_card"
                 src={imageUrl}

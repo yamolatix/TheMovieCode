@@ -7,7 +7,7 @@ class Favorites extends Sequelize.Model { }
 
 Favorites.init({
     tmdbId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false
     },
     title: {
@@ -22,9 +22,12 @@ Favorites.init({
     },
     release_date: {
         type: Sequelize.STRING,
+    },
+    category: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 },
-
     { timestamps: false, sequelize: db, modelName: 'favorites' });
 
 module.exports = Favorites;

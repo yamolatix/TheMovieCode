@@ -9,7 +9,7 @@ const TvShowCard = ({ tvshow }) => {
     const imageUrl = tvshow.poster_path ? `https://image.tmdb.org/t/p/w500${tvshow.poster_path}` : placeholder
 
     return (
-        <Link to={`/tvshows/${tvshow.id}`}>
+        <Link to={`/search/tvshows/${tvshow.id}`}>
             <img
                 className="tvslide_card"
                 src={imageUrl}
