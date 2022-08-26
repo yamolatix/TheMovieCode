@@ -54,9 +54,9 @@
     font-family: 'Staatliches', cursive;
 }
 
-label {
+.label-register {
     display: block;
-    margin-top: 25px;
+    margin-top: 20px;
     font-size: 15px;
 }
 
@@ -100,10 +100,16 @@ select.input-error {
     text-align: center;
 }
 
-/* .button_register:hover{
+.button_register:hover{
+    background-color: #ddd0dd;
+    color: #080710;
+}
+
+.button_register:focus{
     background-color: #080710;
     color: #fff;
-} */
+}
+
 
 .social {
     margin-top: 30px;

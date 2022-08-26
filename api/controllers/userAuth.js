@@ -5,7 +5,6 @@ require("dotenv").config();
 
 exports.register = (req, res) => {
 
-    const SECRET = process.env.SECRET
     const password = bcrypt.hashSync(req.body.password, 10)
 
     User.create({
@@ -13,20 +12,13 @@ exports.register = (req, res) => {
         email: req.body.email,
         password: password
     })
-        .then((user) => {
-
-            const token = jwt.sign({ user: user }, SECRET)
-            res.json({
-                id: user.id,
-                username: user.username,
-                email: user.email,
-                token: token
-            })
+        .then(() => {
+            res.status(201).json("User created")
         })
         .catch(err => {
             res.status(500).json(err)
         })
-};
+}
 
 exports.login = (req, res) => {
     const { username, password } = req.body;
@@ -39,7 +31,7 @@ exports.login = (req, res) => {
     })
         .then(user => {
             if (!user) {
-                res.status(404).json({ msg: "Usuario no encontrado" })
+                res.status(404).json("The user is not registered")
             } else {
                 if (bcrypt.compareSync(password, user.password)) {
 
@@ -52,7 +44,7 @@ exports.login = (req, res) => {
                     })
 
                 } else {
-                    res.status(401).json({ msg: "Contraseña incorrecta" })
+                    res.status(401).json("Incorrect password")
                 }
             }
         })

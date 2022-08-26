@@ -2,50 +2,44 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import toast from 'react-hot-toast'
-import useInput from "../../hooks/useInput";
 import { userRegister } from "../../store/user";
 import "./register.css"
 import { registerSchema } from "../../utils/registerSchema";
 import { useFormik } from "formik"
 
-
 const Register = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const username = useInput();
-    const email = useInput();
-    const password = useInput();
-    ///PUEDO DISPATCHEAR ELQ EU MUESTRA TODOS LOS USUARIOS Y COMPARARLO PARA VER SI YA EXISTE!!!
-    // EN CASO DE ESTAR REGISTRADO SE LE PONE UN CARTEL EN LA CARA Y LE DICE QUE YA ESTA REGISTARADO.
-    // A VER QUE SALEEEE
-    const registerSubmit = (e) => {
-        e.preventDefault();
 
-        if ([username.value, password.value, email.value].includes("")) {
-            return toast.error("You should fill in the fields correctly")
-        }
-
+    const onSubmit = (values, { resetForm }) => {
         dispatch(userRegister({
-            username: username.value,
-            email: email.value,
-            password: password.value,
+            username: values.username,
+            email: values.email,
+            password: values.password,
         }))
-            .then(() => {
-                toast.success('Successfully register!')
-                return navigate("/login")
+            .then((user) => {
+                if (user.payload === "User created") {
+                    toast.success('Successfully register!')
+                    return navigate("/login")
+                } else {
+                    return navigate("/register")
+                }
             })
-            .catch((error) => console.log(error))
+            .catch(() => navigate("/register"))
+        resetForm();
     }
 
 
-    const { values, handleBlur, handleChange, errors, touched } = useFormik({
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: {
             username: "",
             email: "",
             password: ""
         },
         validationSchema: registerSchema,
+        onSubmit
     })
+
     return (
         <>
             <div className="register">
@@ -54,45 +48,53 @@ const Register = () => {
                     <div className="shape_reg"></div>
                 </div>
 
-
-                <form onSubmit={registerSubmit} className="form_register">
+                <form onSubmit={handleSubmit} className="form_register">
                     <h3 className="title_register">THE MOVIE CODE</h3>
 
-                    <label htmlFor="username">Username</label>
+                    <label
+                        htmlFor="username"
+                        className="label-register">
+                        Username
+                    </label>
                     <input
                         value={values.username}
-                        onBlur={handleBlur}
                         onChange={handleChange}
+                        id="username"
                         type="text"
                         placeholder="Username"
-                        id="username"
-                        {...username}
+                        onBlur={handleBlur}
                         className={errors.username && touched.username ? "input-error" : ""}
                     />
                     {errors.username && touched.username && <p className="error">{errors.username}</p>}
 
-                    <label htmlFor="email">Email</label>
+                    <label
+                        htmlFor="email"
+                        className="label-register">
+                        Email
+                    </label>
                     <input
                         value={values.email}
-                        onBlur={handleBlur}
                         onChange={handleChange}
+                        id="email"
                         type="email"
                         placeholder="Email"
-                        id="email"
-                        {...email}
+                        onBlur={handleBlur}
                         className={errors.email && touched.email ? "input-error" : ""}
                     />
                     {errors.email && touched.email && <p className="error">{errors.email}</p>}
 
-                    <label htmlFor="password">Password</label>
+                    <label
+                        htmlFor="password"
+                        className="label-register">
+                        Password
+                    </label>
                     <input
                         value={values.password}
-                        onBlur={handleBlur}
                         onChange={handleChange}
+                        id="password"
                         type="password"
                         placeholder="Password"
-                        id="password"
-                        {...password}
+                        onBlur={handleBlur}
                         className={errors.password && touched.password ? "input-error" : ""}
                     />
                     {errors.password && touched.password && <p className="error">{errors.password}</p>}

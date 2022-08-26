@@ -55,9 +55,9 @@
    font-family: 'Staatliches', cursive;
 }
 
-label {
+.label-login {
    display: block;
-   margin-top: 30px;
+   margin-top: 20px;
    font-size: 15px;
 }
 
@@ -70,6 +70,17 @@ input {
    padding: 0p 10px;
    margin-top: 10px;
    font-size: 13px;
+}
+
+.input-error,
+select.input-error {
+    border: 1px solid #cc96ca;
+}
+
+.error {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 12px;
+    color: #cc96ca;
 }
 
 ::placeholder {
@@ -87,6 +98,16 @@ input {
    border-radius: 5px;
    cursor: pointer;
    text-align: center;
+}
+
+.button_login:hover{
+   background-color: #ddd0dd;
+   color: #080710;
+}
+
+.button_login:focus{
+   background-color: #080710;
+   color: #fff;
 }
 
 .social {

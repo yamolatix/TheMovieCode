@@ -1,30 +1,43 @@
 import React from "react";
-import toast from 'react-hot-toast'
+import toast from 'react-hot-toast';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import useInput from "../../hooks/useInput";
 import { userLogin } from "../../store/user";
-import "./login.css"
+import { loginSchema } from "../../utils/loginSchema";
+import "./login.css";
+import { useFormik } from "formik";
 
 const Login = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const username = useInput();
-    const password = useInput();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const onSubmit = (values, { resetForm }) => {
+
         dispatch(userLogin({
-            username: username.value,
-            password: password.value,
+            username: values.username,
+            password: values.password,
         }))
-            .then(() => {
-                toast.success('Welcome!')
-                return navigate("/")
+            .then((user) => {
+
+                if (user.payload.username) {
+                    toast.success('Welcome!')
+                    return navigate("/")
+                }
             })
-            .catch((error) => console.log(error))
+            .catch((error) => error);
+
+        resetForm();
     }
+
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
+        initialValues: {
+            username: "",
+            password: ""
+        },
+        validationSchema: loginSchema,
+        onSubmit,
+    });
 
     return (
         <div className="initial_login">
@@ -36,13 +49,39 @@ const Login = () => {
             <form className="form_login" onSubmit={handleSubmit} >
                 <h3 className="title_login">THE MOVIE CODE</h3>
 
-                <label htmlFor="username">Username</label>
-                <input type="text" placeholder="Username" id="username" {...username} required />
+                <label
+                    htmlFor="username"
+                    className="label-login">
+                    Username
+                </label>
+                <input
+                    value={values.username}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    type="text"
+                    placeholder="Username"
+                    id="username"
+                    className={errors.password && touched.password ? "input-error" : ""}
+                />
+                {errors.username && touched.username && <p className="error">{errors.username}</p>}
 
-                <label htmlFor="password">Password</label>
-                <input type="password" placeholder="Password" id="password" {...password} required />
+                <label
+                    htmlFor="password" className="label-login">
+                    Password
+                </label>
+                <input
+                    value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    type="password"
+                    placeholder="Password"
+                    id="password"
+                    className={errors.password && touched.password ? "input-error" : ""}
+                />
+                {errors.password && touched.password && <p
+                    className="error">{errors.password}</p>}
 
-                <button className="button_login">Login</button>
+                <button type="submit" className="button_login">Login</button>
 
                 {/*                 <div className="social">
                     <div className="go">
@@ -53,6 +92,6 @@ const Login = () => {
             </form>
 
         </div>
-    )
-}
+    );
+};
 export default Login;

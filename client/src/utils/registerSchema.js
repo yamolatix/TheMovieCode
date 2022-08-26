@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 const isRequired = "Obligatory field"
 export const registerSchema = Yup.object({
     username: Yup.string()
-        .matches(/^[aA-zZ\s]+$/, "Sólo se permiten letras en este campo")
+        .matches(/^[aA-zZ\s]+$/, "Only letters are allowed in this field")
         .min(4, 'Minimum 4 characters')
         .max(25, 'Maximum 25 characters')
         .required(isRequired),

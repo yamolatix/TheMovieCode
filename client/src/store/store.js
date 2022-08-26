@@ -6,11 +6,11 @@ import moviesReducer from './movies';
 import nowPlayingReducer from './now_playing';
 import tvShowsReducer from './tvshows';
 import userReducer from './user';
-// import usersReducer from './users';
+import usersReducer from './users';
 
 const store = configureStore({
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({ serializableCheck: false}).concat(logger),
+        getDefaultMiddleware({ serializableCheck: false }).concat(logger),
     reducer: {
         user: userReducer,
         movies: moviesReducer,
@@ -18,7 +18,7 @@ const store = configureStore({
         individual: individualReducer,
         nowplaying: nowPlayingReducer,
         favorites: favoritesReducer,
-        // users: usersReducer,
+        users: usersReducer,
     }
 });
 

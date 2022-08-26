@@ -1,7 +1,9 @@
 import React from "react";
 import "./carrousel.css"
 import { Link } from "react-router-dom";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const Carrousel = () => {
     // https://www.youtube.com/watch?v=-dqwh8LoMzo&ab_channel=BorjaScript
