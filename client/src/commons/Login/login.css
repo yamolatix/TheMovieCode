@@ -72,15 +72,15 @@ input {
    font-size: 13px;
 }
 
-.input-error,
-select.input-error {
-    border: 1px solid #cc96ca;
+.input_login,
+select.input_login {
+    border: 1px solid #69c682;
 }
 
-.error {
+.error_login {
     font-family: 'Public Sans', sans-serif;
     font-size: 12px;
-    color: #cc96ca;
+    color: #69c682;
 }
 
 ::placeholder {

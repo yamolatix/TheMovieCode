@@ -27,7 +27,7 @@ const Search = () => {
         e.preventDefault();
         dispatch(searchAll(search));
         navigate(`/search?q=${search}`)
-    }
+    };
 
     return (
         <>
@@ -41,9 +41,21 @@ const Search = () => {
 
                 <div className="container_form">
                     <form className="form" onSubmit={handleSubmit}>
-                        <input onChange={handleSearch} value={search} className="input_search" type="text" name="search" placeholder="Search movies or tv shows" />
-                        <button type="submit" className="input_sub"
-                            onClick={() => setActive("ThirdCard")}>
+                        <input
+                            onChange={handleSearch}
+                            value={search}
+                            className="input_search"
+                            type="text"
+                            name="search"
+                            placeholder="Search movies or tv shows"
+                        />
+                        <button
+                            type="submit"
+                            className="input_sub"
+                            onClick={() => {
+                                setActive("ThirdCard")
+                            }}
+                        >
                             <i className='bx bx-search'></i>
                         </button>
                     </form>

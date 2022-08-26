@@ -2,15 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Staatliches&display=swap');
 
 .initial_fav {
-    padding-left: 60px;
-    width: 100%;
+    width: 100%;    
 }
 
 .movie_code {
     font-family: 'Staatliches', cursive;
+    padding-left: 60px;
 }
 
 .title_fav {
     font-family: 'Public Sans', sans-serif;
     font-size: 15px;
+    padding-left: 60px;
 }

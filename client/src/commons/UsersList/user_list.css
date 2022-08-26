@@ -1,8 +1,30 @@
-.initial_users {
-    padding-left: 60px;
-}
-
 .title_users {
     font-family: 'Public Sans', sans-serif;
     font-size: 15px;
+    padding-left: 60px;
+    margin-bottom: 25px;
+
 }
+
+.users_container {
+    padding-left: 60px;
+    font-family: 'Staatliches', cursive;
+    font-size: 25px;
+    text-decoration: none;
+    margin-bottom: 50px;
+}
+
+.user_list {
+    color: #fff;
+}
+
+.user_list:link,
+.user_list:visited,
+.user_list:active {
+    text-decoration: none;
+}
+
+.user_list:hover {
+    text-decoration: none;
+}
+

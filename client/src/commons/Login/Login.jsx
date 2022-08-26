@@ -61,9 +61,9 @@ const Login = () => {
                     type="text"
                     placeholder="Username"
                     id="username"
-                    className={errors.password && touched.password ? "input-error" : ""}
+                    className={errors.password && touched.password ? "input_login" : ""}
                 />
-                {errors.username && touched.username && <p className="error">{errors.username}</p>}
+                {errors.username && touched.username && <p className="error_login">{errors.username}</p>}
 
                 <label
                     htmlFor="password" className="label-login">
@@ -76,10 +76,10 @@ const Login = () => {
                     type="password"
                     placeholder="Password"
                     id="password"
-                    className={errors.password && touched.password ? "input-error" : ""}
+                    className={errors.password && touched.password ? "input_login" : ""}
                 />
                 {errors.password && touched.password && <p
-                    className="error">{errors.password}</p>}
+                    className="error_login">{errors.password}</p>}
 
                 <button type="submit" className="button_login">Login</button>
 

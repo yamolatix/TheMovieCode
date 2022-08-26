@@ -4,7 +4,7 @@ export const settings = {
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 3,
-    speed: 500,
+    speed: 1500,
     rows: 2,
     slidesPerRow: 2
 };

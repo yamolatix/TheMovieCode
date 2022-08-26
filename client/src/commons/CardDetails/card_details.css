@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Staatliches&display=swap');
 
+
 .imagen_details {
     padding-left: 60px;
     background-repeat: no-repeat;
@@ -35,6 +36,7 @@
     margin: 0px;
     color: #fff;
     text-decoration: none;
+    font-weight: 300;
 }
 
 .back_buttom::before {

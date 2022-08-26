@@ -1,0 +1,79 @@
+.imagen_carrousel {
+    background-repeat: no-repeat;
+    background-color: #120312;
+    background-size: cover;
+    width: -60%;
+    height: 70vh;
+    background-position: center right;
+    box-shadow: inset 500px 0px 150px #120312;
+}
+
+.info_caro {
+    position: absolute;
+    bottom: 150px;
+    color: #fff;
+}
+
+.container_title {
+    max-width: 250px;
+}
+
+.link_tit {
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+    color: #fff;
+    font-size: 40px;
+}
+
+.container_description {
+    font-family: 'Public Sans', sans-serif;
+    max-width: 400px;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+
+/* /////////////////////////////// */
+
+.data_carousel {
+    color: #fff;
+    position: absolute;
+    /* position: absolute; hace que el titulo se mantenga en cada slide pero no es la idea */
+}
+
+.car_movie {
+    font-family: 'Staatliches', cursive;
+}
+
+.categories {
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Staatliches', cursive;
+}
+
+.link_cat {
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 45px;
+}
+
+.link_cat::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+}
+
+.link_cat:hover::before {
+    transform: scaleX(1);
+}
