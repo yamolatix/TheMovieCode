@@ -10,17 +10,20 @@ import { useStorage } from "../../hooks/useStorage";
 
 const CardDetails = () => {
     const navigate = useNavigate()
-    const movie = useSelector(state => state.individual)
-    const user = useStorage();
-    const { id } = useParams();
     const dispatch = useDispatch();
+    const { category, id } = useParams();
+    const user = useStorage();
+    const movie = useSelector(state => state.individual)
     const [favorite, setFavorite] = useState(false)
 
     const imageUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : placeholder
 
     useEffect(() => {
-        dispatch(individualMovie(id))
-        dispatch(individualTvShow(id))
+        if (category === "movies") {
+            dispatch(individualMovie(id))
+        } else {
+            dispatch(individualTvShow(id))
+        }
     }, [id])
 
     const agregarFavoritos = () => {
@@ -51,7 +54,6 @@ const CardDetails = () => {
     };
 
     return (
-
         <div className="imagen_details" style={{
             backgroundImage: `url(${imageUrl})`
         }}>
@@ -62,7 +64,6 @@ const CardDetails = () => {
                     <i className='bx bx-chevron-left'></i>
                     <h3 onClick={() => navigate(-1)} className="back_buttom"> BACK</h3>
                 </div>
-
 
                 <div className="info">
                     {favorite ? (
@@ -83,8 +84,8 @@ const CardDetails = () => {
                             {movie.title ? movie.title : movie.name}
                         </h2>
                     </div>
-                    <div className="movie_year">
-                        <h3 className="container_year">
+                    <div className="movie_tag">
+                        <h3 className="container_tag">
                             {movie.tagline ?
                                 movie.tagline : movie.type}
                         </h3>
@@ -101,8 +102,7 @@ const CardDetails = () => {
                 </div>
             </div>
         </div>
-
-    )
-}
+    );
+};
 
 export default CardDetails;

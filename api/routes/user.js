@@ -9,9 +9,9 @@ user.post("/:userId/favorite/add", userController.addFavorite)
 user.delete("/:userId/:favoriteId/remove", userController.removeFavorite)
 
 // Ruta para mostrar los favoritos.
-user.get("/:userId/favorites", userController.allFavorites)
+user.get("/:username/favorites", userController.allFavorites)
 
 // Ruta para mostrar todos los usuarios.
-user.get("/:userId/showUsers", userController.showUsers)
+user.get("/showUsers", userController.showUsers)
 
 module.exports = user;

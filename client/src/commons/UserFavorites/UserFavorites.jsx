@@ -1,30 +1,30 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Grid from "../../components/Grid/Grid";
-import { useStorage } from "../../hooks/useStorage";
 import { allFavorites } from "../../store/favorites";
-import "./favorites.css"
+import "./user_favorites.css"
 
-const Favorites = () => {
+const UserFavorites = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const user = useStorage();
+    const { username } = useParams();
     const favorites = useSelector((state) => state.favorites)
 
     useEffect(() => {
-        dispatch(allFavorites(user.username))
-    }, [dispatch])
+        dispatch(allFavorites(username))
+    }, [username])
 
     return (
         <div className="initial_fav">
             <h1 className="movie_code">THE MOVIE CODE</h1>
-            <div className="back_fav">
+
+            <div className="back_Ufav">
                 <i className='bx bx-chevron-left'></i>
-                <h3 onClick={() => navigate(-1)} className="back_buttomF"> BACK</h3>
+                <h3 onClick={() => navigate(-1)} className="back_buttomUF"> BACK</h3>
             </div>
 
-            <h2 className="title_fav">My Favorites</h2>
+            <h2 className="title_fav_us">{`${username}'s Favorites`}</h2>
 
             <div className="favorites_container">
 
@@ -36,4 +36,4 @@ const Favorites = () => {
     )
 };
 
-export default Favorites;
+export default UserFavorites;

@@ -10,6 +10,8 @@ import UserList from "./commons/UsersList/UserList";
 import Register from "./commons/Register/Register";
 import Login from "./commons/Login/Login";
 import CardDetails from "./commons/CardDetails/CardDetails";
+import UserFavorites from "./commons/UserFavorites/UserFavorites";
+
 const App = () => {
 
   return (
@@ -27,9 +29,11 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/users" element={<UserList />} />
+        <Route path="/favorites/:username" element={<UserFavorites />} />
       </Routes>
 
       <Footer />
+
       <Toaster
         style={{
           borderRadius: '10px',

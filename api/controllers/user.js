@@ -32,19 +32,21 @@ exports.removeFavorite = (req, res) => {
             tmdbId: favoriteId,
         },
         include: [{ model: User, attributes: { id: userId } }]
-    }).then(() =>  res.status(200).json("Se ha eliminado con éxito") )
+    }).then(() => res.status(200).json("Se ha eliminado con éxito"))
 };
 
 exports.allFavorites = (req, res) => {
-    const { userId } = req.params;
+    const { username } = req.params;
 
-    User.findByPk(userId, { include: [{ model: Favorites }] })
+    User.findOne({
+        where: { username: username },
+        include: [{ model: Favorites }]
+    })
         .then(user => res.send(user.favorites))
         .catch((error) => res.status(500).json(error));
 };
 
 exports.showUsers = (req, res) => {
-    const { id } = req.params;
 
     User.findAll({
         attributes: {

@@ -1,8 +1,8 @@
 import { createAsyncThunk, createReducer } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-export const showUsers = createAsyncThunk("SHOW_USERS", (userId) => {
-    return axios.get(`http://localhost:3001/api/user/${userId}/showUsers`)
+export const showUsers = createAsyncThunk("SHOW_USERS", () => {
+    return axios.get(`http://localhost:3001/api/user/showUsers`)
         .then(users => users.data)
         .catch(error => console.log(error))
 });

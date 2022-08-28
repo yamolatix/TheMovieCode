@@ -1,9 +1,12 @@
+.initial_users {
+    height: 100vh;
+}
+
 .title_users {
     font-family: 'Public Sans', sans-serif;
     font-size: 15px;
     padding-left: 60px;
     margin-bottom: 25px;
-
 }
 
 .users_container {
@@ -28,3 +31,45 @@
     text-decoration: none;
 }
 
+.back_list {
+    padding-left: 60px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0px;
+}
+
+.back_list i {
+    font-size: 18px;
+    color: #fff;
+    margin: 0px;
+}
+
+.back_buttomL {
+    font-family: 'Staatliches', cursive;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    margin: 0px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.back_buttomL::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+}
+
+.back_buttomL:hover::before {
+    transform: scaleX(1);
+}
