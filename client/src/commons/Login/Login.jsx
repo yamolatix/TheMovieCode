@@ -19,9 +19,8 @@ const Login = () => {
             password: values.password,
         }))
             .then((user) => {
-
                 if (user.payload.username) {
-                    toast.success('Welcome!')
+                    toast.success(`Welcome ${user.payload.username}!`)
                     return navigate("/")
                 }
             })

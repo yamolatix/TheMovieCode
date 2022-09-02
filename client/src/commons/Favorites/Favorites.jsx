@@ -27,11 +27,12 @@ const Favorites = () => {
             <h2 className="title_fav">My Favorites</h2>
 
             <div className="favorites_container">
-
-                <Grid types={favorites} category={favorites.category === "movies" ? "movies" : "tvshows"} />
-
+                {favorites.length === 0 ? (
+                    <h2 className="not_favs">You don't have favorites yet.</h2>
+                ) : (
+                    <Grid types={favorites} category={favorites.category === "movies" ? "movies" : "tvshows"} />
+                )}
             </div>
-
         </div>
     )
 };

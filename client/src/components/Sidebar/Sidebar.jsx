@@ -18,7 +18,7 @@ const Sidebar = () => {
         e.preventDefault();
         dispatch(userLogout())
             .then(() => {
-                toast.success('Bye!')
+                toast.success('Bye Bye!')
                 return navigate("/")
             })
     }

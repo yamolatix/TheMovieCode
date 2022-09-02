@@ -16,17 +16,20 @@ Favorites.init({
     },
     poster_path: {
         type: Sequelize.STRING,
-    },
-    description: {
-        type: Sequelize.TEXT,
+        allowNull: false
     },
     release_date: {
         type: Sequelize.STRING,
+        allowNull: false
     },
     category: {
         type: Sequelize.STRING,
         allowNull: false
-    }
+    },
+    description: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
 },
     { timestamps: false, sequelize: db, modelName: 'favorites' });
 

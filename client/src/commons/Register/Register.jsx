@@ -29,7 +29,6 @@ const Register = () => {
         resetForm();
     }
 
-
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: {
             username: "",

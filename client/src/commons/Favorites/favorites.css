@@ -60,3 +60,8 @@
 .back_buttomF:hover::before {
     transform: scaleX(1);
 }
+
+.not_favs {
+    font-family: 'Public Sans', sans-serif;
+    margin: 150px 500px;
+}

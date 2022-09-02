@@ -11,7 +11,8 @@ import { useStorage } from "../../hooks/useStorage";
 const CardDetails = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const { category, id } = useParams();
+    // El category que recibe por params queda del anterior y no hace el cambio cuando viene desde los favoritos. A chequear!
+    const { /* category, */ id } = useParams();
     const user = useStorage();
     const movie = useSelector(state => state.individual)
     const [favorite, setFavorite] = useState(false)
@@ -19,11 +20,11 @@ const CardDetails = () => {
     const imageUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : placeholder
 
     useEffect(() => {
-        if (category === "movies") {
-            dispatch(individualMovie(id))
-        } else {
-            dispatch(individualTvShow(id))
-        }
+        /*  if (category === "movies") { */
+        dispatch(individualMovie(id))
+        /*  } else { */
+        dispatch(individualTvShow(id))
+        /*   } */
     }, [id])
 
     const agregarFavoritos = () => {

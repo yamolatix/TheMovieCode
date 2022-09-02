@@ -15,8 +15,8 @@ exports.register = (req, res) => {
         .then(() => {
             res.status(201).json("User created")
         })
-        .catch(err => {
-            res.status(500).json(err)
+        .catch(error => {
+            res.status(500).json(error)
         })
 }
 

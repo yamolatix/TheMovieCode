@@ -5,8 +5,14 @@
     font-family: 'Staatliches', cursive;
 }
 
+.back_ser {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0px;
+    padding-left: 60px;
+}
 
-.back i {
+.back_ser i {
     font-size: 18px;
     color: #fff;
     margin: 0px;

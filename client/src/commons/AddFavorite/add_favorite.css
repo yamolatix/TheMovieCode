@@ -1,0 +1,20 @@
+.favorite_add {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.favorite_add i {
+    font-size: 35px;
+    color: #fff;
+    line-height: 50px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.favorite_add h4 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 13px;
+    line-height: 50px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}

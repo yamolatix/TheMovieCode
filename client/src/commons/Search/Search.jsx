@@ -34,7 +34,7 @@ const Search = () => {
             <div className="initial_search">
 
                 <h1 className="movie_code">THE MOVIE CODE</h1>
-                <div className="back">
+                <div className="back_ser">
                     <i className='bx bx-chevron-left'></i>
                     <h3 onClick={() => navigate(-1)} className="back_buttom"> BACK</h3>
                 </div>
