@@ -1,6 +1,6 @@
 # The Movie Code
 
-<img src="home.png" alt="MDN">
+<img src="./readme/home.png" alt="Home - The Movie Code">
 
 ### Objetivos
 
