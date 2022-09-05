@@ -7,10 +7,11 @@ require("dotenv").config();
 // Middelwares.
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const volleyball = require("volleyball");
 
 // Importo db y rutas.
-const db = require("./config/db")
+const db = require("./config/db");
 const routes = require("./routes");
 
 //importo models por primera y unica vez.
@@ -23,11 +24,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('public'));
+app.use(volleyball);
 
 // routes
-app.use("/api", routes)
+app.use("/api", routes);
 
 // middleware error
 app.use((err, req, res, next) => {
@@ -44,4 +46,4 @@ db.sync({ force: false })
       console.log(`Server listening on port ${PORT}`);
     });
   })
-  .catch(console.error)
+  .catch(console.error);

@@ -4,6 +4,7 @@ import favoritesReducer from './favorites';
 import individualReducer from './individual';
 import moviesReducer from './movies';
 import nowPlayingReducer from './now_playing';
+import stateFav from './statefav';
 import tvShowsReducer from './tvshows';
 import userReducer from './user';
 import usersReducer from './users';
@@ -19,6 +20,7 @@ const store = configureStore({
         nowplaying: nowPlayingReducer,
         favorites: favoritesReducer,
         users: usersReducer,
+        stateFav : stateFav,
     }
 });
 

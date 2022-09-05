@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./card_details.css"
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import placeholder from "../../utils/placeholder.png"
 import { individualMovie, individualTvShow } from "../../store/individual";
-import axios from "axios";
 import toast from 'react-hot-toast'
 import { useStorage } from "../../hooks/useStorage";
+import { addFavorite, removeFavorite } from "../../store/statefav";
+import { allFavorites } from "../../store/favorites";
 
 const CardDetails = () => {
     const navigate = useNavigate()
@@ -15,7 +16,10 @@ const CardDetails = () => {
     const { /* category, */ id } = useParams();
     const user = useStorage();
     const movie = useSelector(state => state.individual)
-    const [favorite, setFavorite] = useState(false)
+    const data = { userId: user.id, movie }
+    const remove = { userId: user.id, movieId: movie.id }
+    const favorites = useSelector(state => state.favorites)
+    const validacion = favorites.filter(fav => fav.tmdbId === movie.id).length > 0
 
     const imageUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : placeholder
 
@@ -23,34 +27,25 @@ const CardDetails = () => {
         /*  if (category === "movies") { */
         dispatch(individualMovie(id))
         /*  } else { */
-        dispatch(individualTvShow(id))
+        dispatch(individualTvShow(id))      
         /*   } */
     }, [id])
 
     const agregarFavoritos = () => {
         if (!user.id) throw toast.error('You need to be logged in');
 
-        axios.post(`http://www.localhost:3001/api/user/${user.id}/favorite/add`, {
-            tmdbId: movie.id,
-            title: movie.title ? movie.title : movie.name,
-            poster_path: movie.poster_path,
-            description: movie.overview,
-            release_date: movie.release_date ? movie.release_date : movie.first_air_date,
-            category: movie.title ? "movies" : "tvshows"
-        })
+        dispatch(addFavorite(data))
             .catch((error) => console.log(error))
-        setFavorite(true)
         toast.success('Added to my Favorites')
     };
+    useEffect(() => {
+        dispatch(allFavorites(user.username))
+    }, [agregarFavoritos])
 
     const eliminarFavoritos = () => {
         if (!user.id) throw toast.error('You need to be logged in');
-        axios.delete(
-            `http://www.localhost:3001/api/user/${user.id}/${movie.id}/remove`)
-            .then(() => { })
+        dispatch(removeFavorite(remove))
             .catch(error => console.log(error))
-        setFavorite(false)
-
         toast.success('Removed to my Favorites')
     };
 
@@ -67,7 +62,7 @@ const CardDetails = () => {
                 </div>
 
                 <div className="info">
-                    {favorite ? (
+                    {validacion ? (
                         <div className="favorite" >
                             <i className='bx bxs-star' onClick={eliminarFavoritos}></i>
 

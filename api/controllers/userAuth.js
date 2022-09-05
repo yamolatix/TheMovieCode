@@ -1,11 +1,10 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 exports.register = (req, res) => {
-
-    const password = bcrypt.hashSync(req.body.password, 10)
+    const password = bcrypt.hashSync(req.body.password, 10);
 
     User.create({
         username: req.body.username,
@@ -17,8 +16,8 @@ exports.register = (req, res) => {
         })
         .catch(error => {
             res.status(500).json(error)
-        })
-}
+        });
+};
 
 exports.login = (req, res) => {
     const { username, password } = req.body;
@@ -50,7 +49,7 @@ exports.login = (req, res) => {
         })
         .catch(err => {
             res.status(500).json(err)
-        })
+        });
 };
 
 exports.logout = (req, res) => {
