@@ -14,7 +14,7 @@ const Favorites = () => {
 
     useEffect(() => {
         dispatch(allFavorites(user.username))
-    }, [dispatch])
+    }, [favorites])
 
     return (
         <div className="initial_fav">
