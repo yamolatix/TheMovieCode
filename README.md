@@ -1,5 +1,7 @@
 # The Movie Code
 
+<img src="./readme/home.png" alt="Home - The Movie Code">
+
 ### Objetivos
 
 En este proyecto de una semana cree una aplicación que muestre películas y programas de televisión. Consumiendo la información de la API de [_The Movie Database_ (TMDB)](https://www.themoviedb.org/).
