@@ -14,14 +14,14 @@ En este proyecto de una semana cree una aplicación que muestre películas y pro
 - Redux
 - CSS
 
-# Back
+#### Back
 - Node.js
 - Express.js
 - Sequelize
 - PostgreSQL
 - JWT
 
-#### Funcionalidades
+### Funcionalidades
 
 - Buscar y listar películas.
 - Ver los detalles de una película o programa de televisión.
@@ -33,7 +33,7 @@ En este proyecto de una semana cree una aplicación que muestre películas y pro
 - Remover una película o programa de una lista de favoritos.
  - Ver a otros usuarios registrados.
 - Ver el las películas o programas favoritos de un usuario específico
-- Mantener sesión abierta ante un cierre del _browser_ o `refresh`.
+- Mantener sesión abierta ante un cierre del _browser_ o _refresh_.
 
 ### En Desarrollo
 
