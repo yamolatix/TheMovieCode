@@ -8,7 +8,7 @@ En este proyecto de una semana cree una aplicación que muestre películas y pro
 
 ### Tecnologías y Herramientas
 
-# Front
+#### Front
 - Javascript 
 - React
 - Redux
@@ -21,7 +21,7 @@ En este proyecto de una semana cree una aplicación que muestre películas y pro
 - PostgreSQL
 - JWT
 
-### Funcionalidades
+#### Funcionalidades
 
 - Buscar y listar películas.
 - Ver los detalles de una película o programa de televisión.
