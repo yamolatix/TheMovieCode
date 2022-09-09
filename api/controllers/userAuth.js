@@ -21,7 +21,7 @@ exports.register = (req, res) => {
 
 exports.login = (req, res) => {
     const { username, password } = req.body;
-    const SECRET = process.env.SECRET
+    const SECRET = process.env.SECRET || BANANA
 
     User.findOne({
         where: {

@@ -38,7 +38,7 @@ app.use((err, req, res, next) => {
 
 // sync + listen port
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 
 db.sync({ force: false })
   .then(() => {

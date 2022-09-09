@@ -32,7 +32,7 @@ exports.addFavorite = (req, res) => {
                     newfavorite.addUser(user.id)
                 })
                 .then(() => res.status(201).send("Se ha agregado con éxito a tu lista de favoritos."))
-                .catch((error) => console.log(error));
+                .catch((error) => res.status(500).json(error));
         })
 };
 
