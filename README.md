@@ -9,17 +9,10 @@ En este proyecto de una semana cree una aplicación que muestre películas y pro
 ### Tecnologías y Herramientas
 
 #### Front
-- Javascript 
-- React
-- Redux
-- CSS
+Javascript , React, Redux, CSS
 
 #### Back
-- Node.js
-- Express.js
-- Sequelize
-- PostgreSQL
-- JWT
+Node.js, Express.js, Sequelize, PostgreSQL, JWT,
 
 ### Funcionalidades
 
@@ -39,3 +32,15 @@ En este proyecto de una semana cree una aplicación que muestre películas y pro
 
 - _Full responsive_.
 - _Loguear_ usuarios a través de su cuenta en Google.
+
+### Video Demo
+<a href="https://www.youtube.com/watch?v=D9LP2XVRj7U&ab_channel=YamilaOrtizToscano" target="_blank" rel="noreferrer">The Movie Code - Youtube</a>
+
+### Otros proyectos
+<a href="https://www.youtube.com/watch?v=0ZmGGYafT7U&ab_channel=YamilaOrtizToscano" target="_blank" rel="noreferrer">miTurno - Youtube</a>
+<a href="https://github.com/yamolatix/miTurno" target="_blank" rel="noreferrer">miTurno - GitHub</a>
+
+
+
+
+
