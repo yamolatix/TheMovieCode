@@ -38,9 +38,5 @@ Node.js, Express.js, Sequelize, PostgreSQL, JWT,
 
 ### Otros proyectos
 <a href="https://www.youtube.com/watch?v=0ZmGGYafT7U&ab_channel=YamilaOrtizToscano" target="_blank" rel="noreferrer">miTurno - Youtube</a>
+<br>
 <a href="https://github.com/yamolatix/miTurno" target="_blank" rel="noreferrer">miTurno - GitHub</a>
-
-
-
-
-
